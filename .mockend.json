@@ -6,7 +6,7 @@
     "events": {
       "hasMany": "Event"
     },
-    { "status": { "Status": {} }
+    "status": { "Status": {} }
   },
   "Status": {
     "productsLeft": {
