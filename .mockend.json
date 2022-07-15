@@ -1,14 +1,34 @@
 {
-  "Post": {
-    "title": { "string": {} },
-    "comments": {
-      "hasMany": "Comment"
+  "Device": {
+    "uuid": { "regexp": "[a-z][0-9]{32}" },
+    "events": {
+      "hasMany": "Event"
     }
   },
-  "Comment": {
-    "body": { "string": {} },
-    "post": {
-      "belongsTo": "Post"
+  "Status": {
+    "productsLeft": { "int": { "min": 0, "max": 50 } },
+    "device": {
+      "belongsTo": "Device"
     }
+  },
+  "Config": {
+    "enabled": { "boolean": {} },
+    "device": {
+      "belongsTo": "Device"
+    }
+  },
+  "Event": {
+    "timestamp: {
+      "dateTime": {
+        "min": "2010-01-01T00:00:00Z",
+        "max": "2020-12-31T23:59:59Z"
+      }
+    },
+    "device": {
+      "belongsTo": "Device"
+    }
+  },
+  "User": {
+    "name": { "loremWord": {} },
   }
 }
