@@ -1,24 +1,33 @@
 {
   "Device": {
-    "uuid": { "regexp": "[a-z][0-9]{32}" },
+    "uuid": {
+      "regexp": "[a-z][0-9]{32}"
+    },
     "events": {
       "hasMany": "Event"
     }
   },
   "Status": {
-    "productsLeft": { "int": { "min": 0, "max": 50 } },
+    "productsLeft": {
+      "int": {
+        "min": 0,
+        "max": 50
+      }
+    },
     "device": {
       "belongsTo": "Device"
     }
   },
   "Config": {
-    "enabled": { "boolean": {} },
+    "enabled": {
+      "boolean": {}
+    },
     "device": {
       "belongsTo": "Device"
     }
   },
   "Event": {
-    "timestamp: {
+    "timestamp": {
       "dateTime": {
         "min": "2010-01-01T00:00:00Z",
         "max": "2020-12-31T23:59:59Z"
@@ -29,6 +38,8 @@
     }
   },
   "User": {
-    "name": { "loremWord": {} },
+    "name": {
+      "loremWord": {}
+    }
   }
 }
